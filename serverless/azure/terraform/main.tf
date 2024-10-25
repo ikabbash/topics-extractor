@@ -1,22 +1,22 @@
 resource "azurerm_storage_account" "te_storage_account" {
-  name                     = "funcapp${random_id.rand_id.hex}"
+  name                     = "stgacc${random_id.rand_id.hex}"
   resource_group_name      = azurerm_resource_group.te_resource_group.name
   location                 = azurerm_resource_group.te_resource_group.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
   tags = {
-    environment = "topic-extractor"
+    environment = "topics-extractor"
   }
 }
 
 resource "azurerm_service_plan" "te_service_plan" {
-  name                = "app-service-plan"
+  name                = "topics-extractor-service-plan"
   resource_group_name = azurerm_resource_group.te_resource_group.name
   location            = azurerm_resource_group.te_resource_group.location
   os_type             = "Linux"
   sku_name            = "B1"
   tags = {
-    environment = "topic-extractor"
+    environment = "topics-extractor"
   }
 }
 
@@ -33,6 +33,6 @@ resource "azurerm_linux_function_app" "te_function_app" {
     }
   }
   tags = {
-    environment = "topic-extractor"
+    environment = "topics-extractor"
   }
 }

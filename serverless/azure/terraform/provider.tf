@@ -13,9 +13,9 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "te_resource_group" {
-  name     = "topic-extractor-rg"
+  name     = "topics-extractor-rg"
   location = var.region
   tags = {
-    environment = "topic-extractor"
+    environment = "topics-extractor"
   }
 }
