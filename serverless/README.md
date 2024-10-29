@@ -54,4 +54,4 @@ The Terraform code creates the following:
     <img src="./output.png" alt="Cloud Function Output" width="800">
 
 ## Things To Consider
-Remember that this is just a proof of concept, its not efficient to use Cloud Function V1 with bucket storage trigger despite it being straightforward because if you have a case where you want the function to be triggered due to a file added in a specific directory within the bucket, consider using Cloud Function V2 with Pub/Sub.
+Remember that this is just a proof of concept, its not efficient to use Cloud Function V1 (which is also called Cloud Run functions) with bucket storage trigger despite it being straightforward because if you have a case where you want the function to be triggered due to a file added in a specific directory within the bucket, consider using Cloud Function V2 with Pub/Sub.
